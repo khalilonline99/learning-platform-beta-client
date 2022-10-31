@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -5,6 +6,21 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+:root {
+  --my-color: #fff;
+  /* or any other variables/style */
+}
+[data-theme='dark'] {
+  --my-color: #000;
+}
+[data-theme='light'] {
+  --my-color: #eeeeee;
+}
+
+body {
+  background-color: var(--my-color);
 }
 
 @media (prefers-reduced-motion: no-preference) {

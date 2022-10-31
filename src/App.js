@@ -1,10 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
+
+
 
 function App() {
+
+  useEffect(() => {
+    themeChange(false)
+  }, [])
+
   return (
     <div className="App">
-      <h2>This files works fine.</h2>
+
+        <input data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" type="checkbox" className="toggle"/>
+
     </div>
   );
 }
