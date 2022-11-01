@@ -35,3 +35,6 @@ align-items: center;
 .btn-user-auth button{
     margin-left: 5px;
 }
+.icon-color {
+color: red;
+}

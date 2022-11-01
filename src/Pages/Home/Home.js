@@ -1,16 +1,9 @@
 import React from 'react';
+import Hero from '../../components/Hero/Hero';
 
 const Home = () => {
     return (
-        <div className='container mx-auto'>
-            <h2>Home is here</h2>
-            <h2>Home is here</h2>
-            <h2>Home is here</h2>
-            <h2>Home is here</h2>
-            <h2>Home is here</h2>
-            <h2>Home is here</h2>
-            <h2>Home is here</h2>
-        </div>
+        <Hero></Hero>
     );
 };
 
