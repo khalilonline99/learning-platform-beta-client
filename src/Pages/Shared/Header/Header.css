@@ -1,8 +1,37 @@
-.nav-container {
-    display: flex;
-    justify-content: space-around;
-}
+/* .nav-container {
+    display: grid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+} */
 
 .nav-container nav a{
     padding: 5px;
+}
+
+.nav-container nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-middle{
+display: flex;
+align-items: center;
+}
+
+.nav-middle div a {
+    padding: 5px;
+}
+
+.nav-middle div {
+    padding: 5px;
+}
+
+.toggle-theme {
+    display: flex;
+    align-items: center;
+}
+
+.btn-user-auth button{
+    margin-left: 5px;
 }
