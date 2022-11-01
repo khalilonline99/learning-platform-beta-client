@@ -1,0 +1,8 @@
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-container nav a{
+    padding: 5px;
+}

@@ -1,6 +1,8 @@
 import './App.css';
 import { useEffect } from 'react'
 import { themeChange } from 'theme-change'
+import { RouterProvider } from 'react-router-dom';
+import {router} from './Routes/Routes/Routes';
 
 
 
@@ -11,9 +13,10 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div>
 
-        <input data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" type="checkbox" className="toggle"/>
+
+        <RouterProvider router={ router }></RouterProvider>
 
     </div>
   );
