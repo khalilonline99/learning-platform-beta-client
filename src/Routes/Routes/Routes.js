@@ -28,6 +28,16 @@ export const router = createBrowserRouter([
                 ]
             },
             {
+                path: '/courses/:id',
+                element: <Courses></Courses>,
+                children: [
+                    {
+                        path: '/courses/:id',
+                        element: <CoursesAll></CoursesAll>
+                    }
+                ]
+            },
+            {
                 path: '/faq',
                 element: <Faq></Faq>
             },
