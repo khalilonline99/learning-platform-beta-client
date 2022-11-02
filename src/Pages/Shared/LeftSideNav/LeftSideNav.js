@@ -14,7 +14,7 @@ const LeftSideNav = () => {
             <h2>Categories</h2>
             {
                 categories.map(category => <li key={category.category_id}>
-                    <Link to={`/category/${category.category_id}`} >{category.name}</Link></li> )
+                    <Link to={`/course/${category.category_id}`} >{category.name}</Link></li> )
             }
         </div>
     );
