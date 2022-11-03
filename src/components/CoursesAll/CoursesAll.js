@@ -11,7 +11,7 @@ const CoursesAll = () => {
             {
                 allCourses.map(course => <CardSingle
                 key={course._id}
-                course={allCourses}
+                course={course}
                 ></CardSingle>)
             }
         </div>
