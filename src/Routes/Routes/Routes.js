@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import CourseDetails from '../../components/CourseDetails/CourseDetails';
 import CoursesAll from '../../components/CoursesAll/CoursesAll';
 import CourseTotal from '../../components/CourseTotal/CourseTotal';
 import Main from '../../layout/Main';
@@ -37,6 +38,11 @@ export const router = createBrowserRouter([
                         path: '/course/:id',
                         element: <CoursesAll></CoursesAll>,
                         loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                    },
+                    {
+                        path: '/course/:id/details',
+                        element: <CourseDetails></CourseDetails>,
+                        loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)   
                     }
                 ]
             },
