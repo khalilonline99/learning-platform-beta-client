@@ -13,7 +13,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className='bg-base-200'>
         <RouterProvider router={ router }></RouterProvider>
     </div>
   );
