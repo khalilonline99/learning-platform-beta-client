@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 import { CiSun } from 'react-icons/ci';
 import { RiMoonClearFill } from 'react-icons/ri';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user} = useContext(AuthContext)
     return (
 
         <div className="navbar container">
@@ -35,7 +37,8 @@ const Header = () => {
             </div>
             <div className="navbar-end btn-user-auth">
             <button className="btn btn-sm btn-primary">Login</button>
-                <button className="btn btn-sm">Register</button>
+            <button className="btn btn-sm">Register</button>
+            <p>{user?.displayName}</p>
             </div>
         </div>
 
