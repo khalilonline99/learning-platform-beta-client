@@ -1,40 +1,37 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
+
+
 const LoginForm = () => {
-  const [credentials, setCredentials] = useState({ username: '', password: '' });
-  const [errors, setErrors] = useState({});
+  const { signIn} = useContext(AuthContext)
+  const navigate = useNavigate() 
+ 
 
   const handleLoginForm = (evt) => {
     evt.preventDefault();
+    const form = evt.target
+    const email = form.email.value
+    const password = form.password.value
+    signIn(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      form.reset();
+      navigate('/')
+      
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 
-    setErrors(errors => ({ ...validateCredentials(credentials) }));
   };
 
-  const validateCredentials = (credentials) => {
-    let errors = {};
-
-    if (credentials.username === '') {
-      errors = Object.assign(errors, {
-        username: 'This field is required',
-      });
-    }
-
-    if (credentials.password === '') {
-      errors = Object.assign(errors, {
-        password: 'This field is required',
-      });
-    }
-
-    return errors;
-  }
-
-  const handleInputChange = (evt) => {
-    evt.persist()
-    setCredentials(credentials => ({ ...credentials, [evt.target.name]: evt.target.value }));
-  }
+   
+ 
   
   const googleProvider = new GoogleAuthProvider()
   const {providerLogin} = useContext(AuthContext)
@@ -49,23 +46,19 @@ const LoginForm = () => {
 
   return (
     <div>
-      <form className="flex flex-col mx-auto items-center my-12" onSubmit={handleLoginForm.bind(this)}>
+      <form className="flex flex-col mx-auto items-center my-12" onSubmit={handleLoginForm}>
       <section className="w-1/2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
           Email
       </label>
         <input
-          id="username"
-          className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary ' + (errors.hasOwnProperty('username') ? "border-red-500" : '')}
-          name="username"
+          id="email"
+          className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary '}
+          name="email"
           type="text"
           placeholder="e.g. Your email address"
-          value={credentials.username}
-          onChange={handleInputChange.bind(this)}
         />
-        {errors.hasOwnProperty('username') &&
-          <p class="text-red-500 text-xs italic">{errors.username}</p>
-        }
+        
       </section>
       <section className="w-1/2">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
@@ -73,19 +66,16 @@ const LoginForm = () => {
       </label>
         <input
           id="password"
-          className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary ' + (errors.hasOwnProperty('password') ? "border-red-500" : '')}
+          className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary '}
           name="password"
           type="password"
           placeholder="* * * * * * * *"
-          value={credentials.password}
-          onChange={handleInputChange.bind(this)}
+          
         />
-        {errors.hasOwnProperty('username') &&
-          <p class="text-red-500 text-xs italic">{errors.username}</p>
-        }
+        
       </section>
       <section className="w-1/2">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded focus:border-none">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded focus:border-none" type='submit'>
           Sign in
       </button>
       </section>
