@@ -36,7 +36,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end btn-user-auth">
-            <button className="btn btn-sm btn-primary">Login</button>
+            <button className="btn btn-sm btn-primary"> <Link to='/login'>Login</Link> </button>
             <button className="btn btn-sm">Register</button>
             <p>{user?.displayName}</p>
             </div>

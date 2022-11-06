@@ -8,6 +8,7 @@ import Blog from '../../Pages/Blog/Blog';
 import Courses from '../../Pages/Courses/Courses';
 import Faq from '../../Pages/Faq/Faq';
 import Home from '../../Pages/Home/Home';
+import LoginForm from '../../Pages/Login/LoginForm';
 
 
 export const router = createBrowserRouter([
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/login',
+                element: <LoginForm></LoginForm>
             }
         ]
     }
