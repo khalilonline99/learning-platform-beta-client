@@ -7,6 +7,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const { createUser } = useContext(AuthContext)
     const [termsAccept, SetTermsAccept] = useState(false)
+    const [confirmPass, SetConfirmPass] = useState(false)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -33,6 +34,29 @@ const Register = () => {
         SetTermsAccept(event.target.checked);
     }
 
+    const handlePass = event => {
+
+    }
+
+    const handleConfirmPass = event => {
+        console.log(event);
+        const form = event.target;
+        const password = document.getElementById('password').value;
+        const confimPasswordById = document.getElementById('confirmPassword').value;
+        console.log(password);
+        // const confirmPassword = event.confirmPassword.value
+
+        if(confimPasswordById === password){
+            SetConfirmPass(true)
+            console.log('pass matched');
+        }
+        else{
+            console.log('password not matched');
+            SetConfirmPass(false)
+        }
+
+    }
+
     return (
         <div className='container mx-auto'>
             <form onSubmit={handleSubmit} className='container mx-auto'>
@@ -45,7 +69,7 @@ const Register = () => {
                         className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
                         name="name"
                         type="text"
-                        placeholder="e.g. Your Full Name" />
+                        placeholder="e.g. MR. AKASH" />
                 </section>
 
                 <section className="w-1/2">
@@ -57,7 +81,7 @@ const Register = () => {
                         className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
                         name="email"
                         type="text"
-                        placeholder="e.g. Your email address" />
+                        placeholder="e.g. user@email.com" />
                 </section>
 
                 <section className="w-1/2">
@@ -65,11 +89,25 @@ const Register = () => {
                         Password
                     </label>
                     <input
-                        
+                        onBlur={handlePass}
+                        id='password'
                         className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
                         name="password"
                         type="password"
-                        placeholder="e.g. Your password" />
+                        placeholder="Your password" />
+                </section>
+
+                <section className="w-1/2">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
+                        Confirm Password
+                    </label>
+                    <input
+                        onBlur={handleConfirmPass}
+                        id='confirmPassword'
+                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
+                        name="confirmPassword"
+                        type="password"
+                        placeholder="Repeat the password" />
                 </section>
 
                 <section>
@@ -82,7 +120,7 @@ const Register = () => {
                         </section>
 
                         <section className="w-1/2 mt-3">
-                            <button type="button" className="bg-blue-500 text-white font-bold py-2 px-12 rounded focus:border-none disabled:opacity-25" disabled={!termsAccept}>
+                            <button type="button" className="bg-blue-500 text-white font-bold py-2 px-12 rounded focus:border-none disabled:opacity-25" disabled={(confirmPass && termsAccept) ? false : true}>
                                 Register
                             </button>
 
