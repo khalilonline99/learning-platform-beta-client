@@ -6,6 +6,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const Register = () => {
     const [error, setError] = useState('');
     const { createUser } = useContext(AuthContext)
+    const [termsAccept, SetTermsAccept] = useState(false)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -28,16 +29,20 @@ const Register = () => {
             })
     }
 
+    const handleAccepted = (event) => {
+        SetTermsAccept(event.target.checked);
+    }
+
     return (
         <div className='container mx-auto'>
             <form onSubmit={handleSubmit} className='container mx-auto'>
                 <section className="w-1/2">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                        your name
+                        Your Name
                     </label>
                     <input
-                        id="username"
-                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary '}
+                        
+                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
                         name="name"
                         type="text"
                         placeholder="e.g. Your Full Name" />
@@ -48,8 +53,8 @@ const Register = () => {
                         Email
                     </label>
                     <input
-                        id="username"
-                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary '}
+                        
+                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
                         name="email"
                         type="text"
                         placeholder="e.g. Your email address" />
@@ -57,36 +62,45 @@ const Register = () => {
 
                 <section className="w-1/2">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                        password
+                        Password
                     </label>
                     <input
-                        id="username"
-                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full focus:bg-primary '}
+                        
+                        className={'border mb-2 py-2 px-3 rounded text-gray-700 w-full'}
                         name="password"
                         type="password"
                         placeholder="e.g. Your password" />
                 </section>
 
-                <section className="w-1/2">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded focus:border-none">
-                        Register
-                    </button>
-
-                    {
-                        error ?
-                            <div className="alert alert-error shadow-lg">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                    <span>{error}</span>
-                                </div>
+                <section>
+                    <div class="form-check">
+                        <input onClick={handleAccepted} class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault"/>
+                            <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
+                                Accept Terms and Conditions
+                            </label>
                             </div>
-                            :
-                            <p></p>
-                    }
-                </section>
-            </form>
-        </div>
-    );
+                        </section>
+
+                        <section className="w-1/2 mt-3">
+                            <button type="button" className="bg-blue-500 text-white font-bold py-2 px-12 rounded focus:border-none disabled:opacity-25" disabled={!termsAccept}>
+                                Register
+                            </button>
+
+                            {
+                                error ?
+                                    <div className="alert alert-error shadow-lg">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            <span>{error}</span>
+                                        </div>
+                                    </div>
+                                    :
+                                    <p></p>
+                            }
+                        </section>
+                    </form>
+                </div>
+                );
 };
 
-export default Register;
+                export default Register;

@@ -43,7 +43,8 @@ const Header = () => {
                     </li>
                 </ul>
             </div>
-            <div className='hidden sm:flex'>
+
+            <div className='lg:invisible visible'>
             <li className='toggle-theme'>
                         <span className='p-0'><CiSun /></span>
                         <input data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" type="checkbox" className="toggle" />
