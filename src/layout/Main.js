@@ -1,3 +1,4 @@
+import Footer from 'rc-footer';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../Pages/Shared/Header/Header';
@@ -11,6 +12,7 @@ const Main = () => {
             <div className='container mx-auto'>
             <Outlet></Outlet>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
