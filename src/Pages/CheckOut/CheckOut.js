@@ -14,7 +14,7 @@ const CheckOut = (props) => {
     return (
         <div>
             <div className='flex flex-col mx-auto items-center mt-10 bg-primary-content p-5'>
-                <h3 className='font-medium text-2xl'>Good day, {user.displayName}</h3>
+                <h3 className='font-medium text-2xl'>Good day, {user?.displayName}</h3>
             </div>
             <div className='flex flex-col mx-auto justify-start mt-10 bg-primary-content p-5'>
                 <h3 className='font-medium text-2xl'>This is checkout page. You are buying the following items:</h3>
