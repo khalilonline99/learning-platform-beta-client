@@ -51,7 +51,7 @@ const Header = () => {
                         <span className='p-0'><RiMoonClearFill className='text-black' /></span>
                     </li>
             </div>
-            <div className="navbar-end btn-user-auth">
+            <div className="navbar-end btn-user-auth w-full">
 
                 {
                     user?.uid ?
@@ -71,9 +71,9 @@ const Header = () => {
                         user?.photoURL ?
 
                             <div className='flex'>
-                            <div className="avatar">
+                            <div className="avatar w-2/5 ml-2">
                                 <div className="w-2/5 rounded-full">
-                                    <img src={user?.photoURL} alt="" />
+                                    <img src = {user?.photoURL} alt="User profile picture" />
                                 </div>
                             </div>
                             </div>
