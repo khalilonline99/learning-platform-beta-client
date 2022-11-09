@@ -5,6 +5,7 @@ import CoursesAll from '../../components/CoursesAll/CoursesAll';
 import CourseTotal from '../../components/CourseTotal/CourseTotal';
 import Main from '../../layout/Main';
 import Blog from '../../Pages/Blog/Blog';
+import CheckOut from '../../Pages/CheckOut/CheckOut';
 import Courses from '../../Pages/Courses/Courses';
 import Faq from '../../Pages/Faq/Faq';
 import Home from '../../Pages/Home/Home';
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/checkout',
+                element: <CheckOut></CheckOut>
             }
         ]
     }

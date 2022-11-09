@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import CardSingle from '../CardSingle/CardSingle';
 
 const CourseDetails = () => {
@@ -15,7 +15,7 @@ const CourseDetails = () => {
                 <p>{about}</p>
                 <p>{price}</p>
                 <div className="card-actions mt-5">
-                    <button className="btn btn-primary">Get Premium Access!</button>
+                    <button className="btn btn-primary"><Link to='/checkout'>Get Premium Access!</Link></button>
                 </div>
             </div>
         </div>
