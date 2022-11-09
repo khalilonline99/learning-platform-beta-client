@@ -4,7 +4,7 @@ import CardSingle from '../CardSingle/CardSingle';
 
 const CourseDetails = () => {
     const courseData = useLoaderData();
-    const {name, price, about, picture} = courseData;
+    const {name, price, about, _id} = courseData;
     console.log(courseData);
     return (
 
@@ -15,7 +15,7 @@ const CourseDetails = () => {
                 <p>{about}</p>
                 <p>{price}</p>
                 <div className="card-actions mt-5">
-                    <button className="btn btn-primary"><Link to='/checkout'>Get Premium Access!</Link></button>
+                    <button className="btn btn-primary"><Link to={`/checkout/${_id}`}>Get Access!</Link></button>
                 </div>
             </div>
         </div>

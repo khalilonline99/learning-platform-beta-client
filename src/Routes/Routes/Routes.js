@@ -4,6 +4,7 @@ import CourseDetails from '../../components/CourseDetails/CourseDetails';
 import CoursesAll from '../../components/CoursesAll/CoursesAll';
 import CourseTotal from '../../components/CourseTotal/CourseTotal';
 import Main from '../../layout/Main';
+import ErrorPage from '../../Pages/404/ErrorPage';
 import Blog from '../../Pages/Blog/Blog';
 import CheckOut from '../../Pages/CheckOut/CheckOut';
 import Courses from '../../Pages/Courses/Courses';
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: '/course/:id/details',
-                        element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
+                        element: <CourseDetails></CourseDetails>,
                         loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)   
                     }
                 ]
@@ -68,7 +69,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/checkout',
-                element: <CheckOut></CheckOut>
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/checkout/${params.id}`)
+            },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
             }
         ]
     }

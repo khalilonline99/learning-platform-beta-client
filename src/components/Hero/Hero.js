@@ -9,7 +9,7 @@ const Hero = () => {
                 <div>
                     <h1 className="text-5xl font-bold">Mentor that you're looking for!</h1>
                     <p className="py-6">Here in Mentor Hero, you are getting all skilled industry leading mentors who can teach you in the best way to grow.</p>
-                    <button className="btn btn-primary"> <Link to='/courses'>Explore More</Link></button>
+                    <button className="btn btn-primary"> <Link to='/course'>Explore Courses</Link></button>
                 </div>
             </div>
         </div>
