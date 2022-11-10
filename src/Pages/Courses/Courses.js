@@ -7,11 +7,13 @@ const Courses = () => {
     // const courses = useLoaderData();
     // console.log(courses.length);
     return (
-        <div className='lg:mt-12 lg:flex lg:justify-between xs:flex '>
-            <div className='max-w-xs container mx-auto'>
+        <div className='container mt-11 flex flex-col  md:grid md:grid-cols-2 md:justify-items-center  lg:grid lg:grid-cols-3 lg:gap-2'>
+            <div>
             <LeftSideNav></LeftSideNav>
             </div>
+            <div className='lg:col-span-2'>
             <Outlet></Outlet>
+            </div>
         </div>
     );
 };

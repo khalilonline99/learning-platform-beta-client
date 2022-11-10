@@ -81,12 +81,12 @@ const Header = () => {
                 </li>
             </div>
 
-            <div className="navbar-end btn-user-auth w-full min-[320px]:hidden">
+            <div className="navbar-end btn-user-auth w-full invisible md:visible lg:visible">
 
                 {
                     user?.uid ?
                         <>
-                            <p>{user?.displayName}</p>
+                            <p>Hi, {user?.displayName}</p>
                             <button onClick={handleLogout} className="btn btn-sm">Log Out</button>
                         </>
                         :
