@@ -11,8 +11,8 @@ const CourseDetails = () => {
             <figure><img src="https://placeimg.com/400/225/tech" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p>{about}</p>
-                <p>{price}</p>
+                <p>Details: {about}</p>
+                <p>Price: ${price}</p>
                 <div className="card-actions mt-5">
                     <button className="btn btn-primary"><Link to={`/checkout/${_id}`}>Get Access!</Link></button>
                 </div>
