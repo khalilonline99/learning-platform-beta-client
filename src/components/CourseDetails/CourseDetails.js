@@ -18,10 +18,6 @@ const CourseDetails = () => {
                 <div className="card-actions mt-5">
                     <button className="btn btn-primary"><Link to={`/checkout`}>Get Access!</Link></button>
                 </div>
-                <div>
-                    <CheckOut price= {price} name = {name}></CheckOut>
-                    
-                </div>
             </div>
         </div>
     );
