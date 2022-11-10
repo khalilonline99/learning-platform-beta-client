@@ -4,7 +4,7 @@ import CardSingle from '../CardSingle/CardSingle';
 
 const CourseTotal = () => {
     const courseAll = useLoaderData();
-    console.log(courseAll);
+    // console.log(courseAll);
     return (
         <div className='grid grid-cols-3 auto-cols-max gap-4 xs:grid-cols-1 sm:grid-cols-1'>
             {

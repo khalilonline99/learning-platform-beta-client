@@ -1,11 +1,9 @@
 import React from 'react';
-import { createContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import CheckOut from '../../Pages/CheckOut/CheckOut';
 
 const CourseDetails = () => {
     const courseData = useLoaderData();
-    const { name, price, about } = courseData;
+    const { name, price, about, _id } = courseData;
 
     return (
 
@@ -16,7 +14,7 @@ const CourseDetails = () => {
                 <p>{about}</p>
                 <p>{price}</p>
                 <div className="card-actions mt-5">
-                    <button className="btn btn-primary"><Link to={`/checkout`}>Get Access!</Link></button>
+                    <button className="btn btn-primary"><Link to={`/checkout/${_id}`}>Get Access!</Link></button>
                 </div>
             </div>
         </div>
