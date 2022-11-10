@@ -12,7 +12,7 @@ const Blog = () => {
             <br /> <br />
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-5">
                 <div className="collapse-title text-xl font-medium">
-                    what is cors?
+                    what is CORS?
                 </div>
                 <div className="collapse-content">
                     <p>Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.</p>

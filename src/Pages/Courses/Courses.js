@@ -7,7 +7,7 @@ const Courses = () => {
     // const courses = useLoaderData();
     // console.log(courses.length);
     return (
-        <div className='mt-12 flex justify-between'>
+        <div className='lg:mt-12 lg:flex lg:justify-between xs:flex '>
             <div className='max-w-xs container mx-auto'>
             <LeftSideNav></LeftSideNav>
             </div>
