@@ -1,6 +1,6 @@
 # Mentor Hero Website
 
-Visit the live site: [Mentor Hero](https://github.com/com).
+Visit the live site: [Mentor Hero](https://mentor-hero-2a52b.web.app/).
 
 ## Features:
 
@@ -16,5 +16,5 @@ Visit the live site: [Mentor Hero](https://github.com/com).
 React
 React Router
 Tailwind, DaisyUI, React Icons, 
-Firebase
+Firebase, Vercel
 
