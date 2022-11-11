@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/course',
                         element: <CourseTotal></CourseTotal>,
-                        loader: () => fetch('http://localhost:5000/course')
+                        loader: () => fetch('https://mentor-server.vercel.app/course')
                     }
                 ]
             },
@@ -42,12 +42,12 @@ export const router = createBrowserRouter([
                     {
                         path: '/course/:id',
                         element: <CoursesAll></CoursesAll>,
-                        loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                        loader: ({params}) => fetch(`https://mentor-server.vercel.app/category/${params.id}`)
                     },
                     {
                         path: '/course/:id/details',
                         element: <CourseDetails></CourseDetails>,
-                        loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)   
+                        loader: ({params}) => fetch(`https://mentor-server.vercel.app/course/${params.id}`)   
                     }
                 ]
             },
@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/checkout/${params.id}`)
+                loader: ({params}) => fetch(`https://mentor-server.vercel.app/checkout/${params.id}`)
             
             },
             {

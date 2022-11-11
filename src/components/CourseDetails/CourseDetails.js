@@ -29,7 +29,6 @@ const CourseDetails = () => {
         <Document>
           <Page size="A4" style={styles.page}>
           <View style={styles.section}>
-            <Image src={picture}/>
             <Text>Course Name: {name}</Text>
             <Text>Course Price: ${price}</Text>
             <Text>Vat: 0.05%</Text>
