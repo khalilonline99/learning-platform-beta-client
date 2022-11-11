@@ -6,7 +6,7 @@ const CoursesAll = () => {
     const allCourses = useLoaderData();
     // console.log(allCourses);
     return (
-        <div className='grid md:max-lg:grid-cols-3 md:max-lg:auto-cols-max gap-4'>
+        <div className='grid md:max-lg:grid-cols-3 lg:grid lg: grid-cols-3'>
             
             {
                 allCourses.map(course => <CardSingle
