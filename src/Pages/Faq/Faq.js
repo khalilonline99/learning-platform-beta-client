@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Faq = () => {
+    
     return (
         <div className='container mx-auto mt-12'>
 
